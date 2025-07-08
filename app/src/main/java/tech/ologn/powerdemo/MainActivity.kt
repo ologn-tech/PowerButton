@@ -1,6 +1,9 @@
 package tech.ologn.powerdemo
 
+import android.content.BroadcastReceiver
+import android.content.Context
 import android.content.Intent
+import android.content.IntentFilter
 import android.os.Build
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
@@ -9,6 +12,9 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
 class MainActivity : AppCompatActivity() {
+    
+    private lateinit var powerButtonReceiver: PowerButtonBroadcastReceiver
+    
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -19,6 +25,7 @@ class MainActivity : AppCompatActivity() {
             insets
         }
         startPowerService()
+        registerPowerButtonReceiver()
     }
 
     private fun startPowerService() {
@@ -27,6 +34,19 @@ class MainActivity : AppCompatActivity() {
             startForegroundService(intent)
         } else {
             startService(intent)
+        }
+    }
+    
+    private fun registerPowerButtonReceiver() {
+        powerButtonReceiver = PowerButtonBroadcastReceiver()
+        val filter = IntentFilter(getString(R.string.intent_action_name))
+        registerReceiver(powerButtonReceiver, filter, RECEIVER_EXPORTED)
+    }
+    
+    override fun onDestroy() {
+        super.onDestroy()
+        if (::powerButtonReceiver.isInitialized) {
+            unregisterReceiver(powerButtonReceiver)
         }
     }
 }

@@ -29,14 +29,7 @@
             android:enabled="true"
             android:exported="false"
             android:foregroundServiceType="connectedDevice" />
-        <receiver
-            android:name=".PowerBroadcastReceiver"
-            android:enabled="true"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="@string/intent_action_name" />
-            </intent-filter>
-        </receiver>
+
     </application>
 
 </manifest>
