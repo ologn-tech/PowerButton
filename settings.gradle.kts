@@ -19,6 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "PowerDemo"
+rootProject.name = "Power Button"
 include(":app")
  

@@ -1,4 +1,4 @@
 <resources>
-    <string name="app_name">PowerDemo</string>
+    <string name="app_name">Power Button</string>
     <string name="intent_action_name">android.intent.action.POWER_BUTTON</string>
 </resources>

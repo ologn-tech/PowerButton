@@ -1,4 +1,4 @@
-package tech.ologn.powerdemo;
+package tech.ologn.powerbutton;
 
 import android.content.BroadcastReceiver
 import android.content.Context

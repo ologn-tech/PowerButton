@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "tech.ologn.powerdemo"
+    namespace = "tech.ologn.powerbutton"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "tech.ologn.powerdemo"
+        applicationId = "tech.ologn.powerbutton"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
